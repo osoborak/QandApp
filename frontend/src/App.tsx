@@ -10,6 +10,7 @@ import { SearchPage } from "./SearchPage";
 import { SignInPage } from "./SignInPage";
 import { NotFoundPage } from "./NotFoundPage";
 import { QuestionPage } from "./QuestionPage";
+
 const App: React.FC = () => {
   return (
     <BrowserRouter>
@@ -27,7 +28,7 @@ const App: React.FC = () => {
           <Route path="/search" component={SearchPage} />
           <Route path="/ask" component={AskPage} />
           <Route path="/signin" component={SignInPage} />
-          <Route path="/questions/:questionId" components={QuestionPage} />
+          <Route path="/questions/:questionId" component={QuestionPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

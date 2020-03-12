@@ -10,12 +10,11 @@ import { RouteComponentProps } from "react-router-dom";
 
 export const HomePage: FC<RouteComponentProps> = ({ history }) => {
   const [questions, setQuestions] = useState<QuestionData[] | null>(null);
-  const [questionsLooading, setQuestionsLoading] = useState(true);
+  const [questionsLoading, setQuestionsLoading] = useState(true);
 
   useEffect(() => {
     const doGetUnansweredQuestions = async () => {
       const unansweredQuestions = await getUnansweredQuestions();
-
       setQuestions(unansweredQuestions);
       setQuestionsLoading(false);
     };
@@ -24,7 +23,6 @@ export const HomePage: FC<RouteComponentProps> = ({ history }) => {
 
   const handleAskQuestionClick = () => {
     history.push("/ask");
-    console.log("TODO - move to the ask page");
   };
 
   return (
@@ -41,7 +39,7 @@ export const HomePage: FC<RouteComponentProps> = ({ history }) => {
           Ask a question
         </PrimaryButton>
       </div>
-      {questionsLooading ? (
+      {questionsLoading ? (
         <div
           css={css`
             font-size: 16px;

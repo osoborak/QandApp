@@ -15,5 +15,11 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["src", "HomePage.tsx", "QuestionList.tsx", "Question.tsx"]
+  "include": [
+    "src",
+    "HomePage.tsx",
+    "QuestionList.tsx",
+    "Question.tsx",
+    "App.tsx"
+  ]
 }
