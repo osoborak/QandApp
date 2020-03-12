@@ -1,6 +1,6 @@
 import React from "react";
 import { FC } from "react";
-/**@jsx jsx */
+/** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { PageTitle } from "./PageTitle";
 

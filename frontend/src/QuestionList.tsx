@@ -6,13 +6,13 @@ import { css, jsx } from "@emotion/core";
 import { gray5, accent2 } from "./Styles";
 import { QuestionData } from "./QuestionsData";
 import { Question } from "./Question";
+
 interface Props {
   data: QuestionData[];
   renderItem?: (item: QuestionData) => JSX.Element;
 }
 
 export const QuestionList: FC<Props> = ({ data, renderItem }) => {
-  console.log("Rendering QuestionList", data, renderItem);
   return (
     <ul
       css={css`
@@ -36,7 +36,6 @@ export const QuestionList: FC<Props> = ({ data, renderItem }) => {
             }
           `}
         >
-          <Question data={question} />
           {renderItem ? renderItem(question) : <Question data={question} />}
         </li>
       ))}

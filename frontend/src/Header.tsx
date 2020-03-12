@@ -9,6 +9,7 @@ export const Header = () => {
   const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     console.log(e.currentTarget.value);
   };
+
   return (
     <div
       css={css`
@@ -36,7 +37,6 @@ export const Header = () => {
       >
         Q & A
       </Link>
-
       <input
         type="text"
         placeholder="Search..."
@@ -58,7 +58,7 @@ export const Header = () => {
         `}
       />
       <Link
-        to="./signin"
+        to="/signin"
         css={css`
           font-family: ${fontFamily};
           font-size: ${fontSize};
