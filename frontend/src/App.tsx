@@ -1,16 +1,16 @@
 /**@jsx jsx */ // tells babel to transform jsx to javascript
 import { css, jsx } from "@emotion/core";
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Header } from "./Header";
 import { HomePage } from "./HomePage";
 import { fontFamily, fontSize, gray2 } from "./Styles";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import { AskPage } from "./AskPage";
 import { SearchPage } from "./SearchPage";
 import { SignInPage } from "./SignInPage";
 import { NotFoundPage } from "./NotFoundPage";
 import { QuestionPage } from "./QuestionPage";
 
+const AskPage = lazy(() => import("./AskPage"));
 const App: React.FC = () => {
   return (
     <BrowserRouter>
@@ -26,7 +26,22 @@ const App: React.FC = () => {
           <Redirect from="/home" to="/" />
           <Route exact path="/" component={HomePage} />
           <Route path="/search" component={SearchPage} />
-          <Route path="/ask" component={AskPage} />
+          <Route path="/ask">
+            <Suspense
+              fallback={
+                <div
+                  css={css`
+                    margin-top: 100px;
+                    text-align: center;
+                  `}
+                >
+                  Loading...
+                </div>
+              }
+            >
+              <AskPage />
+            </Suspense>
+          </Route>
           <Route path="/signin" component={SignInPage} />
           <Route path="/questions/:questionId" component={QuestionPage} />
           <Route component={NotFoundPage} />
