@@ -1,9 +1,9 @@
-import React, { FC } from "react";
-import { AnswerData } from "./QuestionsData";
+import { FC } from 'react';
+import { AnswerData } from './QuestionsData';
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import { Answer } from "./Answer";
-import { gray5 } from "./Styles";
+import { css, jsx } from '@emotion/core';
+import { Answer } from './Answer';
+import { gray5 } from './Styles';
 
 interface Props {
   data: AnswerData[];
@@ -14,7 +14,7 @@ export const AnswerList: FC<Props> = ({ data }) => (
     css={css`
       list-style: none;
       margin: 10px 0 0 0;
-      padding: 0px;
+      padding: 0;
     `}
   >
     {data.map(answer => (

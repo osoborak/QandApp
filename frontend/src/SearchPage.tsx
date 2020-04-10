@@ -1,16 +1,16 @@
-import React, { FC, useState, useEffect } from "react";
-import { RouteComponentProps, Route } from "react-router-dom";
-import { Page } from "./Page";
-import { QuestionList } from "./QuestionList";
-import { searchQuestions, QuestionData } from "./QuestionsData";
+import { FC, useState, useEffect } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
+import { Page } from './Page';
+import { QuestionList } from './QuestionList';
+import { searchQuestions, QuestionData } from './QuestionsData';
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import { QuestionPage } from "./QuestionPage";
+import { css, jsx } from '@emotion/core';
 
 export const SearchPage: FC<RouteComponentProps> = ({ location }) => {
   const [questions, setQuestions] = useState<QuestionData[]>([]);
+
   const searchParams = new URLSearchParams(location.search);
-  const search = searchParams.get("criteria") || "";
+  const search = searchParams.get('criteria') || '';
 
   useEffect(() => {
     const doSearch = async (criteria: string) => {

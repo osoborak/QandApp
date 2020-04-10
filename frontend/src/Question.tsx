@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import { FC } from 'react';
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import { QuestionData } from "./QuestionsData";
-import { gray3, gray2 } from "./Styles";
-import { Link } from "react-router-dom";
+import { css, jsx } from '@emotion/core';
+import { QuestionData } from './QuestionsData';
+import { gray2, gray3 } from './Styles';
+import { Link } from 'react-router-dom';
 
 interface Props {
   data: QuestionData;

@@ -1,16 +1,16 @@
-/**@jsx jsx */ // tells babel to transform jsx to javascript
-import { css, jsx } from "@emotion/core";
-import React, { lazy, Suspense } from "react";
-import { Header } from "./Header";
-import { HomePage } from "./HomePage";
-import { fontFamily, fontSize, gray2 } from "./Styles";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import { SearchPage } from "./SearchPage";
-import { SignInPage } from "./SignInPage";
-import { NotFoundPage } from "./NotFoundPage";
-import { QuestionPage } from "./QuestionPage";
+import React, { lazy, Suspense } from 'react';
+import { HeaderWithRouter as Header } from './Header';
+import { HomePage } from './HomePage';
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+import { fontFamily, fontSize, gray2 } from './Styles';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import { SearchPage } from './SearchPage';
+import { SignInPage } from './SignInPage';
+import { NotFoundPage } from './NotFoundPage';
+import { QuestionPage } from './QuestionPage';
+const AskPage = lazy(() => import('./AskPage'));
 
-const AskPage = lazy(() => import("./AskPage"));
 const App: React.FC = () => {
   return (
     <BrowserRouter>
@@ -50,4 +50,5 @@ const App: React.FC = () => {
     </BrowserRouter>
   );
 };
+
 export default App;

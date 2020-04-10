@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import { FC } from 'react';
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import { AnswerData } from "./QuestionsData";
-import { gray3 } from "./Styles";
+import { css, jsx } from '@emotion/core';
+import { AnswerData } from './QuestionsData';
+import { gray3 } from './Styles';
 
 interface Props {
   data: AnswerData;
@@ -29,8 +29,8 @@ export const Answer: FC<Props> = ({ data }) => (
         color: ${gray3};
       `}
     >
-      {`Answered by ${data.userName} on 
-      ${data.created.toLocaleDateString()}
+      {`Answered by ${data.userName} on
+      ${data.created.toLocaleDateString()} 
       ${data.created.toLocaleTimeString()}`}
     </div>
   </div>

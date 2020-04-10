@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import { FC } from 'react';
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import { PageTitle } from "./PageTitle";
+import { css, jsx } from '@emotion/core';
+import { PageTitle } from './PageTitle';
 
 interface Props {
   title?: string;

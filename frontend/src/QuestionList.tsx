@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import { FC } from 'react';
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import { gray5, accent2 } from "./Styles";
-import { QuestionData } from "./QuestionsData";
-import { Question } from "./Question";
+import { css, jsx } from '@emotion/core';
+import { gray5, accent2 } from './Styles';
+import { QuestionData } from './QuestionsData';
+import { Question } from './Question';
 
 interface Props {
   data: QuestionData[];

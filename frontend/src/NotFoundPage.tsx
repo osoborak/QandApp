@@ -1,4 +1,4 @@
-import React from "react";
-import { Page } from "./Page";
+import React from 'react';
+import { Page } from './Page';
 
-export const NotFoundPage = () => <Page title="Page not found" />;
+export const NotFoundPage = () => <Page title="Page Not Found" />;
